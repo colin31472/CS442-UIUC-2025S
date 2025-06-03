@@ -1,0 +1,263 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[letterpaper,11pt]{article}
+\usepackage{fullpage}
+\usepackage[letterpaper,margin=3cm,headsep=24pt,headheight=2cm]{geometry}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{mathpazo}
+\usepackage{paralist}
+\usepackage{epstopdf}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{mdframed}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\usepackage{framed}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{paralist}
+\usepackage{listings}
+% \usepackage[svgname]{xcolor}
+\usepackage{enumerate}
+\usepackage{array}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{times}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[]
+\newtheorem{conjecture}{Conjecture}[]
+\newtheorem{example}{Example}[]
+\newtheorem{theorem}{Theorem}[]
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\dist}{\mathcal{D}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\br}[1]{\{#1\}}
+\newcommand\todo[1]{\textcolor{red}{[\textbf{TODO}: #1]}}
+\renewcommand{\lstlistingname}{Code}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\vect}{vec}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+\renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcounter{theo}[section]\setcounter{theo}{0}
+\newenvironment{theo}[2][]{%
+	\refstepcounter{theo}
+	\ifstrempty{#1}%
+	% if condition (without title)
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=blue!20]
+				{\strut Theorem~\thetheo};}
+		}%
+		% else condition (with title)
+	}{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=blue!20]
+				{\strut Theorem~\thetheo:~#1};}%
+		}%
+	}%
+	% Both conditions
+	\mdfsetup{%
+		innertopmargin=10pt,linecolor=blue!20,%
+		linewidth=2pt,topline=true,%
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+	}     
+	\begin{mdframed}[]\relax}{%
+\end{mdframed}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{CS 442: Trustworthy Machine Learning}
+\lhead{HW2}
+\cfoot{\thepage}
+
+\lstset{frame=single,
+	language=python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	captionpos=b
+}
+
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{\Large Homework 2} % Title
+
+\author{\large Spring 25, CS 442: Trustworthy Machine Learning  \\ \textbf{Due Friday Mar. 28th at 23:59 CT}} % Author name
+
+\date{Instructor: Han Zhao} % Date for the report
+
+\begin{document}
+	
+	\maketitle % Insert the title, author and date
+	\paragraph{Instructions for submission}
+	All the homework submissions should be typeset in \LaTeX. For all the questions, please clearly justify each step in your derivations or proofs.
+	
+	\section{Statistical Parity and Equalized Odds [10 pts]}
+	\subsection{[5 pts]}
+	Construct three binary random variables $X, A$ and $Y$ such that $X$ is independent of $A$, but $X$ is dependent of $A$ given $Y$.
+	
+	\subsection{[5 pts]}
+	In the course we have seen the following incompatibility theorem between statistical parity and equalized odds for a binary classification problem:
+	\begin{theo}[Incompatibility Theorem]{thm:incomp}
+		Assume that $Y$ and $A$ are binary random variables, then for any binary classifier $\widehat{Y}$, statistical parity and equalized odds are mutually exclusive unless $A\perp Y$ or $\widehat{Y}\perp Y$.
+	\end{theo}
+	Give an example of a classification problem where the target variable $Y$ can take three distinct values, and such that statistical parity and equalized odds are simultaneously achievable.
+	
+	\section{Asymmetric Binary Distinguishing Game [20 pts]}
+	Consider a binary distinguishing game between Alice $(A)$ and Bob $(B)$ as follows. Let $P, Q$ be two distributions that are known to both $A$ and $B$. Every round, $A$ will flip a biased coin $S$, such that $\Pr(S = \mathrm{Head}) = p$ and $\Pr(S = \mathrm{Tail}) = 1-p$ for some constant $0 < p < 1$. Then, upon observing the outcome of the coin flipping, $A$ will draw sample $X$ from a distribution $D$ as follows:
+	\begin{equation*}
+		D = \begin{cases}
+			P & \mathrm{If~} S = \mathrm{Head} \\
+			Q & \mathrm{If~} S = \mathrm{Tail}
+		\end{cases}
+	\end{equation*}
+	The outcome of the coin flipping will not be revealed to $B$. Instead, $A$ will show the drawn sample $X\sim D$ to $B$, and the goal of $B$ is to guess from which distribution $(P \mathrm{~or~} Q)$ the sample $X$ is drawn from.
+	
+	\subsection{Error of a Randomized Strategy [10 pts]}
+	Let $\eta:\mathcal{X}\to [0,1]$ be the conditional probability of $B$ guess that the given sample $X$ is drawn from $P$, i.e., 
+	\begin{equation*}
+		\eta(X) := \Pr(B\text{ guesses }X\sim P\mid X).
+	\end{equation*}
+	Derive the expected error of this strategy as a function of $\eta$.
+	
+	\subsection{Optimal Strategy and Optimal Error Rate [10 pts]}
+	Based on your answer from the last question, derive the optimal strategy $\eta^*$ and the corresponding optimal error rate of $B$.
+	
+	\section{Non-trivial Prediction of the Protected Attribute [10 pts]}
+	Let the tuple $(X, A, Y)$ be the random variables corresponding to input data, the protected attribute and the target variable, respectively. In many cases we can predict both $Y$ and $A$ from the same data $X$ with reasonable accuracy. Suppose we have a classifier $g$ to predict $Y$ from $X$. Define the statistical disparity of $g$ as
+	\begin{equation*}
+		\Delta_{\text{DP}}(g)\defeq |\Pr_{A = 0}(g(X) = 1) - \Pr_{A=1}(g(X) = 1)|,
+	\end{equation*}
+	where we use $\Pr_{A=a}(\cdot)$ to denote the conditional probability of an event conditioned on $A = a$. Clearly, if $\Delta_{\text{DP}}(g) = 0$, then $g$ satisfies the statistical parity condition. Show that there exists a classifier $h$ to predict $A$ from $X$ such that the following error bound holds:
+	\begin{equation*}
+		\varepsilon_{A = 0}(h) + \varepsilon_{A = 1}(h) \leq 1 - \Delta_{\text{DP}}(g),
+	\end{equation*}
+	where $\varepsilon_{A = a}(h)\defeq \Pr_{A = a}[h(X)\neq a]$.
+	
+	\section{Fair Representations [40 pts]}
+	In this problem, we will show that fair representations whose distributions are conditionally aligned will not exacerbate the statistical disparity. Again, let the tuple $(X, A, Y)$ be the random variables corresponding to input data, the protected attribute and the target variable, respectively. In this problem, we assume both $A$ and $Y$ to be binary variables.
+	
+	Consider representations $Z = g(X)$ such that $Z\perp A \mid Y$. For a classifier $\widehat{Y} = h(Z)$ that acts on the representations $Z$, let $\Delta_{\text{DP}}(\widehat{Y})\defeq |\Pr_{A = 0}(\widehat{Y} = 1) - \Pr_{A = 1}(\widehat{Y} = 1)|$.
+	
+	\subsection{[10pts]}
+	Show that for any classifier $h$ that acts on the representations $Z = g(X)$, $\widehat{Y} = h(Z)$ satisfies equalized odds.
+	
+	\subsection{[20pts]}
+	Define $\gamma_a \defeq \Pr_{A= a}(Y =0)$. Show that for any classifier $h$ over $Z$, the following inequality holds:
+	\begin{equation*}
+		\left|\Pr_{A = 0}(\widehat{Y} = y) - \Pr_{A = 1}(\widehat{Y} = y)\right|\leq |\gamma_0 - \gamma_1|\cdot \left(\Pr(\widehat{Y} = y\mid Y = 0) + \Pr(\widehat{Y} = y\mid Y = 1)\right), \forall y\in\{0, 1\}.
+	\end{equation*}
+	
+	\subsection{[10pts]}
+	Prove that for any classifier $\widehat{Y} = h(Z)$, $\Delta_{\text{DP}}(h\circ g)\leq \Delta_{\text{BR}}$, where $\Delta_{\text{BR}}\defeq |\gamma_0 - \gamma_1|$ is the difference of base rates. Note: this proposition states that if a classifier satisfies equalized odds, then it will not exacerbate the statistical disparity of the optimal classifier.
+	
+	
+	\section{Coding [20 pts]}
+	In this problem, you need to \textbf{1)} train a model to approximately achieve \textit{statistical parity} using adversarial training (as introduced in Lecture 8), and \textbf{2)} train a model to approximately achieve \textit{equalized odds} using conditional learning (as introduced in Lecture 10).
+	
+	First, you need to download and unzip ``cs442\_hw2\_code.zip''. This folder consists of one subfolder and five files.
+	\begin{itemize}
+		\item The ``data'' subfolder includes two datasets—Adult and COMPAS.
+		\item The ``dataset.py'' file processes these two datasets. Specifically, on the Adult dataset, ``sex'' is selected as the protected attribute while ``income'' is selected as the target attribute. On the COMPAS dataset, ``African\_American'' is selected as the protected attribute while ``Two\_yr\_Recidivism'' is selected as the target attribute. 
+		\item The ``models.py'' file contains the model to be trained with adversarial training (called ``FairNet'') and the model to be trained with conditional learning (called ``CFairNet'').
+		\item The ``utils.py'' file contains functions to compute errors.
+		\item The ``main\_adult.py'' file is the main file to run to get the performance on the Adult dataset. Once you implement the following functions, you can simply run: 
+		\begin{verbatim}
+			python main_adult.py -m fair
+			python main_adult.py -m cfair-eo
+		\end{verbatim}
+		to get different errors. You can further specify ``-u'' to change the weight of adversarial classification loss. (Please specify as $0.1$, $1$, and $10$, respectively.)
+		\item The ``main\_compas.py'' file is the main file to run to get the performance on the COMPAS dataset. Once you implement the following functions, you can simply run: 
+		\begin{verbatim}
+			python main_compas.py -m fair
+			python main_compas.py -m cfair-eo
+		\end{verbatim}
+		to get different errors. You can further specify ``-u'' to change the weight of adversarial classification loss. (Please specify as $0.1$, $1$, and $10$, respectively.)
+	\end{itemize}
+	
+	For this problem, you will need to implement these functions following the corresponding docstrings.
+	\begin{enumerate}
+		\item In ``models.py'' file, please implement the ``forward'' function and the ``backward'' function in the \textcolor{blue}{GradReverse} Class.
+		\item In ``models.py'' file, please implement the ``forward'' function in the \textcolor{blue}{FairNet} Class. 
+		\item In ``models.py'' file, please implement the ``forward'' function in the \textcolor{blue}{CFairNet} Class. 
+	\end{enumerate}
+	
+	\subsection{[10pts]}
+	Please plot three figures for each dataset. In these figures, x-axis is the weight of adversarial classification loss (\textit{i.e.}, $0.1$, $1$, and $10$), while the y-axis is \underline{a)} the overall predicted error ($\Pr(\hat{Y}\neq Y)$), \underline{b)} the statistical parity gap ($| \Pr(\hat{Y}=1\mid A=0) - \Pr(\hat{Y}=1\mid A=1)|$), and \underline{c)} the equalized odds gap ($0.5*| \Pr(\hat{Y}=1\mid A=0, Y=0) - \Pr(\hat{Y}=1\mid A=1, Y=0)| + 0.5*| \Pr(\hat{Y}=1\mid A=0, Y=1) - \Pr(\hat{Y}=1\mid A=1, Y=1)| $), respectively.
+	
+	\subsection{[5pts]}
+	Perform an analysis on the results (\textit{e.g.}, What are the relationships between the weight of adversarial classification loss and the above notions? What are the relationships between the overall predicted error and the other two fairness notions?)
+	
+	\subsection{[5pts]}
+	Show your implemented codes.
+	
+\end{document}

@@ -1,0 +1,444 @@
+03-27 16:33 [MainProcess, 10304] [INFO ]  Propublica COMPAS data set, target attribute: recidivism classification, sensitive attribute: race
+03-27 16:33 [MainProcess, 10304] [DEBUG]  Shape of COMPAS dataset: (6172, 12)
+03-27 16:33 [MainProcess, 10304] [INFO ]  Total number of instances in the COMPAS data: 6172
+03-27 16:33 [MainProcess, 10304] [INFO ]  Time used to load all the data sets: 0.026243209838867188 seconds.
+03-27 16:33 [MainProcess, 10304] [INFO ]  Experiment with FairNet: fair adversarial debiasing:
+03-27 16:33 [MainProcess, 10304] [INFO ]  Hyperparameter setting = {'num_classes': 2, 'num_groups': 2, 'num_epochs': 50, 'batch_size': 512, 'lr': 1.0, 'mu': 0.1, 'input_dim': 11, 'hidden_layers': [10], 'adversary_layers': [10]}.
+03-27 16:33 [MainProcess, 10304] [INFO ]  Model architecture: FairNet(
+  (hiddens): ModuleList(
+    (0): Linear(in_features=11, out_features=10, bias=True)
+  )
+  (softmax): Linear(in_features=10, out_features=2, bias=True)
+  (adversaries): ModuleList(
+    (0): Linear(in_features=10, out_features=10, bias=True)
+  )
+  (sensitive_cls): Linear(in_features=10, out_features=2, bias=True)
+)
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 0, loss value = 5.864249885082245, adv_loss value = 6.018579542636871
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 1, loss value = 5.795558035373688, adv_loss value = 5.998518645763397
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 2, loss value = 5.71269953250885, adv_loss value = 5.9792004227638245
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 3, loss value = 5.674979567527771, adv_loss value = 5.965345323085785
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 4, loss value = 5.623665928840637, adv_loss value = 5.9680750370025635
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 5, loss value = 5.5659361481666565, adv_loss value = 5.947214424610138
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 6, loss value = 5.51275759935379, adv_loss value = 5.959353685379028
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 7, loss value = 5.496001660823822, adv_loss value = 5.944575846195221
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 8, loss value = 5.439943492412567, adv_loss value = 5.931180357933044
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 9, loss value = 5.448135614395142, adv_loss value = 5.914058744907379
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 10, loss value = 5.4377601146698, adv_loss value = 5.942661762237549
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 11, loss value = 5.407586932182312, adv_loss value = 5.910431265830994
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 12, loss value = 5.422724187374115, adv_loss value = 5.896009385585785
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 13, loss value = 5.426788032054901, adv_loss value = 5.876419186592102
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 14, loss value = 5.413760960102081, adv_loss value = 5.87913703918457
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 15, loss value = 5.425014674663544, adv_loss value = 5.871968388557434
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 16, loss value = 5.4065991044044495, adv_loss value = 5.837682366371155
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 17, loss value = 5.415379881858826, adv_loss value = 5.827275276184082
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 18, loss value = 5.39979875087738, adv_loss value = 5.781480073928833
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 19, loss value = 5.424348175525665, adv_loss value = 5.7486692070961
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 20, loss value = 5.398379564285278, adv_loss value = 5.745723903179169
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 21, loss value = 5.4005831480026245, adv_loss value = 5.707980990409851
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 22, loss value = 5.387190818786621, adv_loss value = 5.711349129676819
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 23, loss value = 5.4059131145477295, adv_loss value = 5.710151493549347
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 24, loss value = 5.398211896419525, adv_loss value = 5.721062242984772
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 25, loss value = 5.396738588809967, adv_loss value = 5.717016935348511
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 26, loss value = 5.409418284893036, adv_loss value = 5.762291252613068
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 27, loss value = 5.415993630886078, adv_loss value = 5.815129637718201
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 28, loss value = 5.396989583969116, adv_loss value = 5.843888223171234
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 29, loss value = 5.416955947875977, adv_loss value = 5.882894039154053
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 30, loss value = 5.381384432315826, adv_loss value = 5.922642111778259
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 31, loss value = 5.408345460891724, adv_loss value = 5.922270655632019
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 32, loss value = 5.376721560955048, adv_loss value = 5.938695013523102
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 33, loss value = 5.4220370054244995, adv_loss value = 5.940953254699707
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 34, loss value = 5.421480715274811, adv_loss value = 5.921343982219696
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 35, loss value = 5.430365264415741, adv_loss value = 5.924142897129059
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 36, loss value = 5.404529094696045, adv_loss value = 5.903342545032501
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 37, loss value = 5.40678995847702, adv_loss value = 5.883113384246826
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 38, loss value = 5.411133289337158, adv_loss value = 5.8856024742126465
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 39, loss value = 5.4145700335502625, adv_loss value = 5.8536494970321655
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 40, loss value = 5.391403496265411, adv_loss value = 5.8571693897247314
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 41, loss value = 5.390938341617584, adv_loss value = 5.860995054244995
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 42, loss value = 5.3939709067344666, adv_loss value = 5.825882315635681
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 43, loss value = 5.397874474525452, adv_loss value = 5.838740050792694
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 44, loss value = 5.399080216884613, adv_loss value = 5.849810838699341
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 45, loss value = 5.390654921531677, adv_loss value = 5.852437257766724
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 46, loss value = 5.403427183628082, adv_loss value = 5.859804451465607
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 47, loss value = 5.423208296298981, adv_loss value = 5.889541506767273
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 48, loss value = 5.375731110572815, adv_loss value = 5.861759424209595
+03-27 16:33 [MainProcess, 10304] [INFO ]  Iteration 49, loss value = 5.356507122516632, adv_loss value = 5.835414886474609
+03-27 16:33 [MainProcess, 10304] [INFO ]  Time used for training = 4.966354608535767 seconds.
+03-27 16:33 [MainProcess, 10304] [INFO ]  The global marginal label distribution of Y = 1: 0.46652267818574517
+03-27 16:33 [MainProcess, 10304] [INFO ]  Overall predicted error = 0.30183585313174943, Err|A=0 = 0.3097643097643098, Err|A=1 = 0.2944849115504683
+03-27 16:33 [MainProcess, 10304] [INFO ]  Statistical Parity Gap: |Pred=1|A=0 - Pred=1|A=1| = 0.22230047030602013
+03-27 16:33 [MainProcess, 10304] [INFO ]  Equalized Odds Gap Y = 0: |Pred = 1|A = 0, Y = 0 - Pred = 1|A = 1, Y = 0| = 0.13181902580924676
+03-27 16:33 [MainProcess, 10304] [INFO ]  Equalized Odds Gap Y = 1: |Pred = 1|A = 0, Y = 1 - Pred = 1|A = 1, Y = 1| = 0.22609041847297184
+03-27 16:34 [MainProcess, 20852] [INFO ]  Propublica COMPAS data set, target attribute: recidivism classification, sensitive attribute: race
+03-27 16:34 [MainProcess, 20852] [DEBUG]  Shape of COMPAS dataset: (6172, 12)
+03-27 16:34 [MainProcess, 20852] [INFO ]  Total number of instances in the COMPAS data: 6172
+03-27 16:34 [MainProcess, 20852] [INFO ]  Time used to load all the data sets: 0.006002187728881836 seconds.
+03-27 16:34 [MainProcess, 20852] [INFO ]  Experiment with FairNet: fair adversarial debiasing:
+03-27 16:34 [MainProcess, 20852] [INFO ]  Hyperparameter setting = {'num_classes': 2, 'num_groups': 2, 'num_epochs': 50, 'batch_size': 512, 'lr': 1.0, 'mu': 1.0, 'input_dim': 11, 'hidden_layers': [10], 'adversary_layers': [10]}.
+03-27 16:34 [MainProcess, 20852] [INFO ]  Model architecture: FairNet(
+  (hiddens): ModuleList(
+    (0): Linear(in_features=11, out_features=10, bias=True)
+  )
+  (softmax): Linear(in_features=10, out_features=2, bias=True)
+  (adversaries): ModuleList(
+    (0): Linear(in_features=10, out_features=10, bias=True)
+  )
+  (sensitive_cls): Linear(in_features=10, out_features=2, bias=True)
+)
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 0, loss value = 5.866757035255432, adv_loss value = 6.015152215957642
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 1, loss value = 5.801734983921051, adv_loss value = 5.994785308837891
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 2, loss value = 5.722790360450745, adv_loss value = 5.993269205093384
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 3, loss value = 5.6884042620658875, adv_loss value = 5.989833414554596
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 4, loss value = 5.641934931278229, adv_loss value = 5.9974493980407715
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 5, loss value = 5.5943284034729, adv_loss value = 5.985799968242645
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 6, loss value = 5.564936339855194, adv_loss value = 6.055960416793823
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 7, loss value = 5.569057404994965, adv_loss value = 6.142786681652069
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 8, loss value = 5.530928552150726, adv_loss value = 6.1720911860466
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 9, loss value = 5.540768265724182, adv_loss value = 6.095703125
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 10, loss value = 5.512221992015839, adv_loss value = 6.081740856170654
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 11, loss value = 5.474070847034454, adv_loss value = 6.096738636493683
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 12, loss value = 5.479379951953888, adv_loss value = 6.096142947673798
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 13, loss value = 5.4881967306137085, adv_loss value = 6.077487826347351
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 14, loss value = 5.499637842178345, adv_loss value = 6.133824110031128
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 15, loss value = 5.5298449993133545, adv_loss value = 6.19915097951889
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 16, loss value = 5.515139818191528, adv_loss value = 6.206162452697754
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 17, loss value = 5.5243805050849915, adv_loss value = 6.1897212266922
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 18, loss value = 5.503885090351105, adv_loss value = 6.201321125030518
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 19, loss value = 5.514549136161804, adv_loss value = 6.230970025062561
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 20, loss value = 5.50140905380249, adv_loss value = 6.261554479598999
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 21, loss value = 5.487951755523682, adv_loss value = 6.233716607093811
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 22, loss value = 5.464478850364685, adv_loss value = 6.231515049934387
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 23, loss value = 5.48834615945816, adv_loss value = 6.216097414493561
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 24, loss value = 5.476309239864349, adv_loss value = 6.188752591609955
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 25, loss value = 5.467745244503021, adv_loss value = 6.159214794635773
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 26, loss value = 5.497045695781708, adv_loss value = 6.176023840904236
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 27, loss value = 5.502852737903595, adv_loss value = 6.20774507522583
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 28, loss value = 5.487662851810455, adv_loss value = 6.227196574211121
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 29, loss value = 5.508081912994385, adv_loss value = 6.2332799434661865
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 30, loss value = 5.470378875732422, adv_loss value = 6.210865378379822
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 31, loss value = 5.485925734043121, adv_loss value = 6.1865047216415405
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 32, loss value = 5.455601155757904, adv_loss value = 6.196281790733337
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 33, loss value = 5.489346146583557, adv_loss value = 6.178327560424805
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 34, loss value = 5.491799414157867, adv_loss value = 6.16509884595871
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 35, loss value = 5.496111273765564, adv_loss value = 6.1531829833984375
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 36, loss value = 5.472347676753998, adv_loss value = 6.144875526428223
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 37, loss value = 5.470897316932678, adv_loss value = 6.135212242603302
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 38, loss value = 5.47375100851059, adv_loss value = 6.153194546699524
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 39, loss value = 5.480924963951111, adv_loss value = 6.160505533218384
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 40, loss value = 5.466911733150482, adv_loss value = 6.160736382007599
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 41, loss value = 5.473654091358185, adv_loss value = 6.152235746383667
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 42, loss value = 5.468807756900787, adv_loss value = 6.14602130651474
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 43, loss value = 5.463891446590424, adv_loss value = 6.1559648513793945
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 44, loss value = 5.4807745814323425, adv_loss value = 6.196654379367828
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 45, loss value = 5.480060458183289, adv_loss value = 6.222720682621002
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 46, loss value = 5.4935023188591, adv_loss value = 6.240861713886261
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 47, loss value = 5.510353922843933, adv_loss value = 6.238762319087982
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 48, loss value = 5.457976996898651, adv_loss value = 6.218497693538666
+03-27 16:34 [MainProcess, 20852] [INFO ]  Iteration 49, loss value = 5.432939052581787, adv_loss value = 6.1896843910217285
+03-27 16:34 [MainProcess, 20852] [INFO ]  Time used for training = 4.997293949127197 seconds.
+03-27 16:34 [MainProcess, 20852] [INFO ]  The global marginal label distribution of Y = 1: 0.46652267818574517
+03-27 16:34 [MainProcess, 20852] [INFO ]  Overall predicted error = 0.31965442764578833, Err|A=0 = 0.32659932659932656, Err|A=1 = 0.3132154006243496
+03-27 16:34 [MainProcess, 20852] [INFO ]  Statistical Parity Gap: |Pred=1|A=0 - Pred=1|A=1| = 0.08981244985407316
+03-27 16:34 [MainProcess, 20852] [INFO ]  Equalized Odds Gap Y = 0: |Pred = 1|A = 0, Y = 0 - Pred = 1|A = 1, Y = 0| = 0.011210827092488274
+03-27 16:34 [MainProcess, 20852] [INFO ]  Equalized Odds Gap Y = 1: |Pred = 1|A = 0, Y = 1 - Pred = 1|A = 1, Y = 1| = 0.08526497390073429
+03-27 16:34 [MainProcess, 26200] [INFO ]  Propublica COMPAS data set, target attribute: recidivism classification, sensitive attribute: race
+03-27 16:34 [MainProcess, 26200] [DEBUG]  Shape of COMPAS dataset: (6172, 12)
+03-27 16:34 [MainProcess, 26200] [INFO ]  Total number of instances in the COMPAS data: 6172
+03-27 16:34 [MainProcess, 26200] [INFO ]  Time used to load all the data sets: 0.0060007572174072266 seconds.
+03-27 16:34 [MainProcess, 26200] [INFO ]  Experiment with FairNet: fair adversarial debiasing:
+03-27 16:34 [MainProcess, 26200] [INFO ]  Hyperparameter setting = {'num_classes': 2, 'num_groups': 2, 'num_epochs': 50, 'batch_size': 512, 'lr': 1.0, 'mu': 10.0, 'input_dim': 11, 'hidden_layers': [10], 'adversary_layers': [10]}.
+03-27 16:34 [MainProcess, 26200] [INFO ]  Model architecture: FairNet(
+  (hiddens): ModuleList(
+    (0): Linear(in_features=11, out_features=10, bias=True)
+  )
+  (softmax): Linear(in_features=10, out_features=2, bias=True)
+  (adversaries): ModuleList(
+    (0): Linear(in_features=10, out_features=10, bias=True)
+  )
+  (sensitive_cls): Linear(in_features=10, out_features=2, bias=True)
+)
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 0, loss value = 5.883993148803711, adv_loss value = 6.021880507469177
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 1, loss value = 5.861772418022156, adv_loss value = 6.010449409484863
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 2, loss value = 5.828430712223053, adv_loss value = 5.989765167236328
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 3, loss value = 5.8673882484436035, adv_loss value = 6.003962337970734
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 4, loss value = 5.882452189922333, adv_loss value = 6.08690470457077
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 5, loss value = 5.83446192741394, adv_loss value = 6.129999816417694
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 6, loss value = 5.788076281547546, adv_loss value = 6.196087598800659
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 7, loss value = 5.744250476360321, adv_loss value = 6.195262372493744
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 8, loss value = 5.641110420227051, adv_loss value = 6.2104756236076355
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 9, loss value = 5.616406202316284, adv_loss value = 6.1545281410217285
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 10, loss value = 5.657766401767731, adv_loss value = 6.153481602668762
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 11, loss value = 5.762729465961456, adv_loss value = 6.163473546504974
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 12, loss value = 5.9113229513168335, adv_loss value = 6.256881415843964
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 13, loss value = 5.857325315475464, adv_loss value = 6.259123802185059
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 14, loss value = 5.725079357624054, adv_loss value = 6.084224224090576
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 15, loss value = 5.616734504699707, adv_loss value = 6.191466867923737
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 16, loss value = 5.620534420013428, adv_loss value = 6.232661664485931
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 17, loss value = 5.595262289047241, adv_loss value = 6.176895260810852
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 18, loss value = 5.567098915576935, adv_loss value = 6.247170984745026
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 19, loss value = 5.5663676261901855, adv_loss value = 6.241471827030182
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 20, loss value = 5.591857552528381, adv_loss value = 6.222543895244598
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 21, loss value = 5.610215067863464, adv_loss value = 6.255635559558868
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 22, loss value = 5.651914656162262, adv_loss value = 6.317568242549896
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 23, loss value = 5.6512563824653625, adv_loss value = 6.272205829620361
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 24, loss value = 5.611267626285553, adv_loss value = 6.225669980049133
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 25, loss value = 5.5827906131744385, adv_loss value = 6.250487506389618
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 26, loss value = 5.587931036949158, adv_loss value = 6.24442321062088
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 27, loss value = 5.571586966514587, adv_loss value = 6.234545350074768
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 28, loss value = 5.553091883659363, adv_loss value = 6.2433571219444275
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 29, loss value = 5.566498100757599, adv_loss value = 6.216740787029266
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 30, loss value = 5.536829769611359, adv_loss value = 6.170043170452118
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 31, loss value = 5.568920373916626, adv_loss value = 6.249428987503052
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 32, loss value = 5.59559565782547, adv_loss value = 6.260571599006653
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 33, loss value = 5.614705145359039, adv_loss value = 6.153026759624481
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 34, loss value = 5.58733606338501, adv_loss value = 6.357048690319061
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 35, loss value = 5.597130537033081, adv_loss value = 6.173001825809479
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 36, loss value = 5.560647785663605, adv_loss value = 6.116765260696411
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 37, loss value = 5.581911265850067, adv_loss value = 6.260328471660614
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 38, loss value = 5.596792161464691, adv_loss value = 6.2572962641716
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 39, loss value = 5.540198087692261, adv_loss value = 6.224100768566132
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 40, loss value = 5.507273435592651, adv_loss value = 6.2057716846466064
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 41, loss value = 5.515635013580322, adv_loss value = 6.233343541622162
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 42, loss value = 5.507148265838623, adv_loss value = 6.193158745765686
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 43, loss value = 5.56233948469162, adv_loss value = 6.265652537345886
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 44, loss value = 5.627943277359009, adv_loss value = 6.308721840381622
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 45, loss value = 5.525397479534149, adv_loss value = 6.210453510284424
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 46, loss value = 5.510848879814148, adv_loss value = 6.160923540592194
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 47, loss value = 5.536702513694763, adv_loss value = 6.2254210114479065
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 48, loss value = 5.5094011425971985, adv_loss value = 6.282976448535919
+03-27 16:34 [MainProcess, 26200] [INFO ]  Iteration 49, loss value = 5.5408870577812195, adv_loss value = 6.265965104103088
+03-27 16:34 [MainProcess, 26200] [INFO ]  Time used for training = 5.138147830963135 seconds.
+03-27 16:34 [MainProcess, 26200] [INFO ]  The global marginal label distribution of Y = 1: 0.46652267818574517
+03-27 16:34 [MainProcess, 26200] [INFO ]  Overall predicted error = 0.3212742980561555, Err|A=0 = 0.30527497194163866, Err|A=1 = 0.33610822060353795
+03-27 16:34 [MainProcess, 26200] [INFO ]  Statistical Parity Gap: |Pred=1|A=0 - Pred=1|A=1| = 0.009278821280208682
+03-27 16:34 [MainProcess, 26200] [INFO ]  Equalized Odds Gap Y = 0: |Pred = 1|A = 0, Y = 0 - Pred = 1|A = 1, Y = 0| = 0.030892698727073925
+03-27 16:34 [MainProcess, 26200] [INFO ]  Equalized Odds Gap Y = 1: |Pred = 1|A = 0, Y = 1 - Pred = 1|A = 1, Y = 1| = 0.040962576307175036
+03-27 16:34 [MainProcess, 8148] [INFO ]  Propublica COMPAS data set, target attribute: recidivism classification, sensitive attribute: race
+03-27 16:34 [MainProcess, 8148] [DEBUG]  Shape of COMPAS dataset: (6172, 12)
+03-27 16:34 [MainProcess, 8148] [INFO ]  Total number of instances in the COMPAS data: 6172
+03-27 16:34 [MainProcess, 8148] [INFO ]  Time used to load all the data sets: 0.00599980354309082 seconds.
+03-27 16:34 [MainProcess, 8148] [INFO ]  Experiment with CFairNet: cfair-eo adversarial debiasing:
+03-27 16:34 [MainProcess, 8148] [INFO ]  Hyperparameter setting = {'num_classes': 2, 'num_groups': 2, 'num_epochs': 50, 'batch_size': 512, 'lr': 1.0, 'mu': 0.1, 'input_dim': 11, 'hidden_layers': [10], 'adversary_layers': [10]}.
+03-27 16:34 [MainProcess, 8148] [INFO ]  Model architecture: CFairNet(
+  (hiddens): ModuleList(
+    (0): Linear(in_features=11, out_features=10, bias=True)
+  )
+  (softmax): Linear(in_features=10, out_features=2, bias=True)
+  (adversaries): ModuleList(
+    (0-1): 2 x ModuleList(
+      (0): Linear(in_features=10, out_features=10, bias=True)
+    )
+  )
+  (sensitive_cls): ModuleList(
+    (0-1): 2 x Linear(in_features=10, out_features=2, bias=True)
+  )
+)
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 0, loss value = 5.865096926689148, adv_loss value = 6.266992568969727
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 1, loss value = 5.785168170928955, adv_loss value = 6.171622812747955
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 2, loss value = 5.724647283554077, adv_loss value = 6.102931976318359
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 3, loss value = 5.653739154338837, adv_loss value = 6.046772718429565
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 4, loss value = 5.609549462795258, adv_loss value = 6.0163955092430115
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 5, loss value = 5.558349668979645, adv_loss value = 6.00168251991272
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 6, loss value = 5.526633679866791, adv_loss value = 5.9773582220077515
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 7, loss value = 5.475123286247253, adv_loss value = 5.96968537569046
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 8, loss value = 5.445781052112579, adv_loss value = 5.945383548736572
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 9, loss value = 5.438641309738159, adv_loss value = 5.929426789283752
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 10, loss value = 5.434807062149048, adv_loss value = 5.9121063351631165
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 11, loss value = 5.427559316158295, adv_loss value = 5.910849094390869
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 12, loss value = 5.414951205253601, adv_loss value = 5.8870208859443665
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 13, loss value = 5.422365665435791, adv_loss value = 5.881952404975891
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 14, loss value = 5.441692292690277, adv_loss value = 5.901897490024567
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 15, loss value = 5.39112251996994, adv_loss value = 5.849283277988434
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 16, loss value = 5.376610517501831, adv_loss value = 5.814860582351685
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 17, loss value = 5.428053915500641, adv_loss value = 5.837036967277527
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 18, loss value = 5.419425547122955, adv_loss value = 5.817896366119385
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 19, loss value = 5.390822112560272, adv_loss value = 5.7926002740859985
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 20, loss value = 5.391162276268005, adv_loss value = 5.7917463183403015
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 21, loss value = 5.411125302314758, adv_loss value = 5.756165146827698
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 22, loss value = 5.411953151226044, adv_loss value = 5.7637768387794495
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 23, loss value = 5.455795347690582, adv_loss value = 5.759187400341034
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 24, loss value = 5.403726637363434, adv_loss value = 5.753331780433655
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 25, loss value = 5.4132843017578125, adv_loss value = 5.748556137084961
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 26, loss value = 5.398695588111877, adv_loss value = 5.7612104415893555
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 27, loss value = 5.393341600894928, adv_loss value = 5.771791040897369
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 28, loss value = 5.409229576587677, adv_loss value = 5.776867151260376
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 29, loss value = 5.408660352230072, adv_loss value = 5.7956560254096985
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 30, loss value = 5.4082653522491455, adv_loss value = 5.823052704334259
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 31, loss value = 5.396146476268768, adv_loss value = 5.840309798717499
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 32, loss value = 5.399420738220215, adv_loss value = 5.846785724163055
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 33, loss value = 5.406871497631073, adv_loss value = 5.8653059005737305
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 34, loss value = 5.39278781414032, adv_loss value = 5.884970605373383
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 35, loss value = 5.408840179443359, adv_loss value = 5.897609174251556
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 36, loss value = 5.397766351699829, adv_loss value = 5.9212400913238525
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 37, loss value = 5.400325536727905, adv_loss value = 5.90835177898407
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 38, loss value = 5.383841872215271, adv_loss value = 5.916167736053467
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 39, loss value = 5.408285617828369, adv_loss value = 5.9272013902664185
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 40, loss value = 5.414444208145142, adv_loss value = 5.905058801174164
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 41, loss value = 5.40416806936264, adv_loss value = 5.91501772403717
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 42, loss value = 5.416507959365845, adv_loss value = 5.915599465370178
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 43, loss value = 5.3959813714027405, adv_loss value = 5.925973951816559
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 44, loss value = 5.41974264383316, adv_loss value = 5.908780455589294
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 45, loss value = 5.387275338172913, adv_loss value = 5.921410799026489
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 46, loss value = 5.384739637374878, adv_loss value = 5.896866261959076
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 47, loss value = 5.388454377651215, adv_loss value = 5.899287641048431
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 48, loss value = 5.402404248714447, adv_loss value = 5.901588618755341
+03-27 16:34 [MainProcess, 8148] [INFO ]  Iteration 49, loss value = 5.391586363315582, adv_loss value = 5.907166838645935
+03-27 16:34 [MainProcess, 8148] [INFO ]  Time used for training = 5.403011798858643 seconds.
+03-27 16:34 [MainProcess, 8148] [INFO ]  The global marginal label distribution of Y = 1: 0.46652267818574517
+03-27 16:34 [MainProcess, 8148] [INFO ]  Overall predicted error = 0.30615550755939525, Err|A=0 = 0.3153759820426487, Err|A=1 = 0.29760665972944844
+03-27 16:34 [MainProcess, 8148] [INFO ]  Statistical Parity Gap: |Pred=1|A=0 - Pred=1|A=1| = 0.22944323568673208
+03-27 16:34 [MainProcess, 8148] [INFO ]  Equalized Odds Gap Y = 0: |Pred = 1|A = 0, Y = 0 - Pred = 1|A = 1, Y = 0| = 0.135218996925997
+03-27 16:34 [MainProcess, 8148] [INFO ]  Equalized Odds Gap Y = 1: |Pred = 1|A = 0, Y = 1 - Pred = 1|A = 1, Y = 1| = 0.2406883128372998
+03-27 16:34 [MainProcess, 24772] [INFO ]  Propublica COMPAS data set, target attribute: recidivism classification, sensitive attribute: race
+03-27 16:34 [MainProcess, 24772] [DEBUG]  Shape of COMPAS dataset: (6172, 12)
+03-27 16:34 [MainProcess, 24772] [INFO ]  Total number of instances in the COMPAS data: 6172
+03-27 16:34 [MainProcess, 24772] [INFO ]  Time used to load all the data sets: 0.006517887115478516 seconds.
+03-27 16:34 [MainProcess, 24772] [INFO ]  Experiment with CFairNet: cfair-eo adversarial debiasing:
+03-27 16:34 [MainProcess, 24772] [INFO ]  Hyperparameter setting = {'num_classes': 2, 'num_groups': 2, 'num_epochs': 50, 'batch_size': 512, 'lr': 1.0, 'mu': 1.0, 'input_dim': 11, 'hidden_layers': [10], 'adversary_layers': [10]}.
+03-27 16:34 [MainProcess, 24772] [INFO ]  Model architecture: CFairNet(
+  (hiddens): ModuleList(
+    (0): Linear(in_features=11, out_features=10, bias=True)
+  )
+  (softmax): Linear(in_features=10, out_features=2, bias=True)
+  (adversaries): ModuleList(
+    (0-1): 2 x ModuleList(
+      (0): Linear(in_features=10, out_features=10, bias=True)
+    )
+  )
+  (sensitive_cls): ModuleList(
+    (0-1): 2 x Linear(in_features=10, out_features=2, bias=True)
+  )
+)
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 0, loss value = 5.869083940982819, adv_loss value = 6.267239451408386
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 1, loss value = 5.8007853627204895, adv_loss value = 6.145897150039673
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 2, loss value = 5.750847041606903, adv_loss value = 6.040881514549255
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 3, loss value = 5.691301643848419, adv_loss value = 5.994416773319244
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 4, loss value = 5.662750005722046, adv_loss value = 5.978610098361969
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 5, loss value = 5.621589183807373, adv_loss value = 5.986544966697693
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 6, loss value = 5.5878114104270935, adv_loss value = 6.003409564495087
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 7, loss value = 5.533480226993561, adv_loss value = 6.045376002788544
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 8, loss value = 5.498685777187347, adv_loss value = 6.07867830991745
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 9, loss value = 5.481113255023956, adv_loss value = 6.105331122875214
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 10, loss value = 5.4713780879974365, adv_loss value = 6.105787813663483
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 11, loss value = 5.468910455703735, adv_loss value = 6.103475093841553
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 12, loss value = 5.461717069149017, adv_loss value = 6.07484233379364
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 13, loss value = 5.480359673500061, adv_loss value = 6.076335668563843
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 14, loss value = 5.509314179420471, adv_loss value = 6.115448534488678
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 15, loss value = 5.471747994422913, adv_loss value = 6.120621621608734
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 16, loss value = 5.459192872047424, adv_loss value = 6.113401770591736
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 17, loss value = 5.494011580944061, adv_loss value = 6.131851077079773
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 18, loss value = 5.4922550320625305, adv_loss value = 6.102680027484894
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 19, loss value = 5.461365163326263, adv_loss value = 6.084872186183929
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 20, loss value = 5.449876546859741, adv_loss value = 6.07340008020401
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 21, loss value = 5.469316720962524, adv_loss value = 6.05646812915802
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 22, loss value = 5.468260228633881, adv_loss value = 6.06137079000473
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 23, loss value = 5.511244475841522, adv_loss value = 6.055541455745697
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 24, loss value = 5.45225465297699, adv_loss value = 6.063342392444611
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 25, loss value = 5.460879981517792, adv_loss value = 6.057924211025238
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 26, loss value = 5.451519966125488, adv_loss value = 6.074338018894196
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 27, loss value = 5.4480215311050415, adv_loss value = 6.080793559551239
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 28, loss value = 5.455217480659485, adv_loss value = 6.083887875080109
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 29, loss value = 5.464789867401123, adv_loss value = 6.096232891082764
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 30, loss value = 5.467115998268127, adv_loss value = 6.119057714939117
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 31, loss value = 5.453128159046173, adv_loss value = 6.123361229896545
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 32, loss value = 5.457490026950836, adv_loss value = 6.133513510227203
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 33, loss value = 5.465492606163025, adv_loss value = 6.126668393611908
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 34, loss value = 5.451944947242737, adv_loss value = 6.129156947135925
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 35, loss value = 5.4555041790008545, adv_loss value = 6.1220239996910095
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 36, loss value = 5.457264721393585, adv_loss value = 6.135537385940552
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 37, loss value = 5.458103597164154, adv_loss value = 6.128933489322662
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 38, loss value = 5.442491233348846, adv_loss value = 6.144498407840729
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 39, loss value = 5.4712377190589905, adv_loss value = 6.147654175758362
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 40, loss value = 5.470881640911102, adv_loss value = 6.130429685115814
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 41, loss value = 5.458764731884003, adv_loss value = 6.138961613178253
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 42, loss value = 5.4735658168792725, adv_loss value = 6.133861005306244
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 43, loss value = 5.457104027271271, adv_loss value = 6.132666707038879
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 44, loss value = 5.478475332260132, adv_loss value = 6.112738788127899
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 45, loss value = 5.453145325183868, adv_loss value = 6.129957973957062
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 46, loss value = 5.44046676158905, adv_loss value = 6.119681894779205
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 47, loss value = 5.4454116225242615, adv_loss value = 6.115851521492004
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 48, loss value = 5.460822522640228, adv_loss value = 6.115462422370911
+03-27 16:34 [MainProcess, 24772] [INFO ]  Iteration 49, loss value = 5.452445864677429, adv_loss value = 6.115188121795654
+03-27 16:34 [MainProcess, 24772] [INFO ]  Time used for training = 5.749626874923706 seconds.
+03-27 16:34 [MainProcess, 24772] [INFO ]  The global marginal label distribution of Y = 1: 0.46652267818574517
+03-27 16:34 [MainProcess, 24772] [INFO ]  Overall predicted error = 0.32073434125269984, Err|A=0 = 0.32996632996633, Err|A=1 = 0.3121748178980229
+03-27 16:34 [MainProcess, 24772] [INFO ]  Statistical Parity Gap: |Pred=1|A=0 - Pred=1|A=1| = 0.10719753903937046
+03-27 16:34 [MainProcess, 24772] [INFO ]  Equalized Odds Gap Y = 0: |Pred = 1|A = 0, Y = 0 - Pred = 1|A = 1, Y = 0| = 0.0234408202842937
+03-27 16:34 [MainProcess, 24772] [INFO ]  Equalized Odds Gap Y = 1: |Pred = 1|A = 0, Y = 1 - Pred = 1|A = 1, Y = 1| = 0.10999292223303547
+03-27 16:34 [MainProcess, 24284] [INFO ]  Propublica COMPAS data set, target attribute: recidivism classification, sensitive attribute: race
+03-27 16:34 [MainProcess, 24284] [DEBUG]  Shape of COMPAS dataset: (6172, 12)
+03-27 16:34 [MainProcess, 24284] [INFO ]  Total number of instances in the COMPAS data: 6172
+03-27 16:34 [MainProcess, 24284] [INFO ]  Time used to load all the data sets: 0.0059986114501953125 seconds.
+03-27 16:34 [MainProcess, 24284] [INFO ]  Experiment with CFairNet: cfair-eo adversarial debiasing:
+03-27 16:34 [MainProcess, 24284] [INFO ]  Hyperparameter setting = {'num_classes': 2, 'num_groups': 2, 'num_epochs': 50, 'batch_size': 512, 'lr': 1.0, 'mu': 10.0, 'input_dim': 11, 'hidden_layers': [10], 'adversary_layers': [10]}.
+03-27 16:34 [MainProcess, 24284] [INFO ]  Model architecture: CFairNet(
+  (hiddens): ModuleList(
+    (0): Linear(in_features=11, out_features=10, bias=True)
+  )
+  (softmax): Linear(in_features=10, out_features=2, bias=True)
+  (adversaries): ModuleList(
+    (0-1): 2 x ModuleList(
+      (0): Linear(in_features=10, out_features=10, bias=True)
+    )
+  )
+  (sensitive_cls): ModuleList(
+    (0-1): 2 x Linear(in_features=10, out_features=2, bias=True)
+  )
+)
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 0, loss value = 5.891869962215424, adv_loss value = 6.271462857723236
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 1, loss value = 5.867027223110199, adv_loss value = 6.128004550933838
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 2, loss value = 5.850343644618988, adv_loss value = 5.958675920963287
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 3, loss value = 5.821290612220764, adv_loss value = 5.862910270690918
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 4, loss value = 5.799255430698395, adv_loss value = 5.982454538345337
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 5, loss value = 5.758227646350861, adv_loss value = 6.177902698516846
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 6, loss value = 5.741811037063599, adv_loss value = 6.194928050041199
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 7, loss value = 5.708481073379517, adv_loss value = 6.167333424091339
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 8, loss value = 5.69025719165802, adv_loss value = 6.164293050765991
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 9, loss value = 5.682633340358734, adv_loss value = 6.115195989608765
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 10, loss value = 5.632364273071289, adv_loss value = 6.000520765781403
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 11, loss value = 5.6080557107925415, adv_loss value = 6.076696455478668
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 12, loss value = 5.617054522037506, adv_loss value = 6.179563820362091
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 13, loss value = 5.610198140144348, adv_loss value = 6.08679872751236
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 14, loss value = 5.606900870800018, adv_loss value = 6.008945107460022
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 15, loss value = 5.535778760910034, adv_loss value = 6.002813100814819
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 16, loss value = 5.494305074214935, adv_loss value = 6.156833291053772
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 17, loss value = 5.524754226207733, adv_loss value = 6.105683386325836
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 18, loss value = 5.5261266231536865, adv_loss value = 5.9390082359313965
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 19, loss value = 5.533584296703339, adv_loss value = 6.0184266567230225
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 20, loss value = 5.5675506591796875, adv_loss value = 6.180619060993195
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 21, loss value = 5.574376225471497, adv_loss value = 6.102681875228882
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 22, loss value = 5.525793790817261, adv_loss value = 6.057114124298096
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 23, loss value = 5.544946134090424, adv_loss value = 6.041534841060638
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 24, loss value = 5.473873198032379, adv_loss value = 6.028820991516113
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 25, loss value = 5.524770140647888, adv_loss value = 6.049426853656769
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 26, loss value = 5.581687748432159, adv_loss value = 6.1103909611701965
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 27, loss value = 5.597525119781494, adv_loss value = 6.112720727920532
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 28, loss value = 5.603843927383423, adv_loss value = 6.082683265209198
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 29, loss value = 5.59137487411499, adv_loss value = 6.116321563720703
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 30, loss value = 5.575277090072632, adv_loss value = 6.198822796344757
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 31, loss value = 5.568094611167908, adv_loss value = 6.206647872924805
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 32, loss value = 5.610735535621643, adv_loss value = 6.1277236342430115
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 33, loss value = 5.702194571495056, adv_loss value = 6.123916745185852
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 34, loss value = 5.669524669647217, adv_loss value = 6.138354957103729
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 35, loss value = 5.639561891555786, adv_loss value = 6.182721674442291
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 36, loss value = 5.66002345085144, adv_loss value = 6.174422800540924
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 37, loss value = 5.624602019786835, adv_loss value = 6.191991209983826
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 38, loss value = 5.578623712062836, adv_loss value = 6.199171304702759
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 39, loss value = 5.601175546646118, adv_loss value = 6.137453258037567
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 40, loss value = 5.582880616188049, adv_loss value = 6.0928874015808105
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 41, loss value = 5.562091648578644, adv_loss value = 6.14313268661499
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 42, loss value = 5.610962450504303, adv_loss value = 6.178930878639221
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 43, loss value = 5.611380994319916, adv_loss value = 6.15643185377121
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 44, loss value = 5.588671982288361, adv_loss value = 6.128891468048096
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 45, loss value = 5.583417296409607, adv_loss value = 6.1461904644966125
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 46, loss value = 5.5493834018707275, adv_loss value = 6.147362947463989
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 47, loss value = 5.509230554103851, adv_loss value = 6.148038625717163
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 48, loss value = 5.5133339166641235, adv_loss value = 6.135545253753662
+03-27 16:34 [MainProcess, 24284] [INFO ]  Iteration 49, loss value = 5.508986115455627, adv_loss value = 6.120721995830536
+03-27 16:34 [MainProcess, 24284] [INFO ]  Time used for training = 5.223270654678345 seconds.
+03-27 16:34 [MainProcess, 24284] [INFO ]  The global marginal label distribution of Y = 1: 0.46652267818574517
+03-27 16:34 [MainProcess, 24284] [INFO ]  Overall predicted error = 0.3212742980561555, Err|A=0 = 0.31874298540965207, Err|A=1 = 0.32362122788761705
+03-27 16:34 [MainProcess, 24284] [INFO ]  Statistical Parity Gap: |Pred=1|A=0 - Pred=1|A=1| = 0.12476832143845673
+03-27 16:34 [MainProcess, 24284] [INFO ]  Equalized Odds Gap Y = 0: |Pred = 1|A = 0, Y = 0 - Pred = 1|A = 1, Y = 0| = 0.05742402673763697
+03-27 16:34 [MainProcess, 24284] [INFO ]  Equalized Odds Gap Y = 1: |Pred = 1|A = 0, Y = 1 - Pred = 1|A = 1, Y = 1| = 0.10997080421127137

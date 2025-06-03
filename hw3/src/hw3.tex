@@ -1,0 +1,311 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[letterpaper,11pt]{article}
+\usepackage{fullpage}
+\usepackage[letterpaper,margin=3cm,headsep=24pt,headheight=2cm]{geometry}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{mathpazo}
+\usepackage{paralist}
+\usepackage{epstopdf}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{mdframed}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\usepackage{framed}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{paralist}
+\usepackage{listings}
+% \usepackage[svgname]{xcolor}
+\usepackage{enumerate}
+\usepackage{array}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{times}
+\usepackage{hyperref}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[]
+\newtheorem{conjecture}{Conjecture}[]
+\newtheorem{example}{Example}[]
+\newtheorem{theorem}{Theorem}[]
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\dist}{\mathcal{D}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\br}[1]{\{#1\}}
+\newcommand\todo[1]{\textcolor{red}{[\textbf{TODO}: #1]}}
+\renewcommand{\lstlistingname}{Code}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\vect}{vec}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+\renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}
+\newcommand{\dtv}{d_{\text{TV}}}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcounter{theo}[section]\setcounter{theo}{0}
+\newenvironment{theo}[2][]{%
+    \refstepcounter{theo}
+    \ifstrempty{#1}%
+    % if condition (without title)
+    {\mdfsetup{%
+        frametitle={%
+            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+            \node[anchor=east,rectangle,fill=blue!20]
+            {\strut Theorem~\thetheo};}
+        }%
+    % else condition (with title)
+    }{\mdfsetup{%
+        frametitle={%
+            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+            \node[anchor=east,rectangle,fill=blue!20]
+            {\strut Theorem~\thetheo:~#1};}%
+        }%
+    }%
+    % Both conditions
+    \mdfsetup{%
+        innertopmargin=10pt,linecolor=blue!20,%
+        linewidth=2pt,topline=true,%
+        frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+    }     
+\begin{mdframed}[]\relax}{%
+\end{mdframed}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{CS 442: Trustworthy Machine Learning}
+\lhead{HW3}
+\cfoot{\thepage}
+
+\lstset{frame=single,
+  language=python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  captionpos=b
+}
+
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{\huge Homework 3} % Title
+
+\author{\large Spring 25, CS 442: Trustworthy Machine Learning  \\ \textbf{Due Fri. Apr. 25th at 23:59 CT}} % Author name
+
+\date{Instructor: Han Zhao} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+\paragraph{Instructions for submission}
+All the homework submissions should be typeset in \LaTeX. For all the questions, please clearly justify each step in your derivations or proofs.
+
+\section{Bayes Optimal Predictor for Regression [10pts]}
+Let $\mu$ be a joint distribution over $X\times Y$, where $X\in\RR^p$ and $Y\in \RR$. In this problem we are interested in deriving the Bayes optimal predictor for regression under the mean-squared error. More specifically, we are interested in finding a function $f^*(\cdot)$ that minimizes the following expected squared loss:
+\begin{equation*}
+    f^* = \argmin_{f\in\mathcal{F}}\EE_{(x, y)\sim \mu}\left[(f(x) - y)^2\right],
+\end{equation*}
+where $\mathcal{F}$ is the function class that contains all possible functions from $\RR^p$ to $\RR$. Derive an analytical solution for $f^*$.
+
+
+\section{Tradeoff between Robustness and Accuracy [30pts]}
+In this problem we will show the potential tradeoff between robustness and accuracy for linear classifiers under a constructed distribution that we have seen in the lectures. Consider a binary classification task as follows. To sample a data from the distribution, we first sample uniformly at random $y\in\{+1, -1\}$, i.e., $\Pr(Y = 1) = \Pr(Y = -1) = 1/2$. Given the label of interest $y$, there are $d$ features, namely $x_1, \ldots, x_d$, whose distributions are defined as follows:
+\begin{equation*}
+    x_1 = \begin{cases}
+    +y, & \text{w.p.~ $p$} \\
+    -y, & \text{w.p.~ $1-p$}
+    \end{cases},\quad x_2,\ldots,x_d \sim \mathcal{N}(2y/\sqrt{d}, 1),
+\end{equation*}
+where $0.5 < p \leq 0.8$, $d \geq 25$ and $\mathcal{N}(2y/\sqrt{d}, 1)$ is the univariate Gaussian distribution with mean $2y/\sqrt{d}$ and variance $1$.
+
+To demonstrate the impact of enforcing robustness, we focus on using linear classifiers for classification. More specifically, let $w\in\RR^d$, the classifier we are going to use is given by 
+\begin{equation*}
+    f_w(x) \defeq \text{sgn}(w^\top x).
+\end{equation*}
+
+\subsection{[10pts]}
+\label{p:1.1}
+Show that there exists a linear classifier $w_n\in\RR^d$, such that the standard accuracy of $f_{w_n}(\cdot)$ on this problem is at least $0.85$. 
+
+Hint: You can use the following tail bound for Gaussian distribution. Suppose $Z\sim \mathcal{N}(\mu, \sigma^2)$, then $\Pr(Z - u \leq -t\sigma) \leq \exp(-t^2/2)$ for any $t \geq 0$.
+
+\subsection{[15pts]}
+\label{p:1.2}
+Now let's consider the $\ell_\infty$ norm attack with budget $\epsilon = \frac{4}{\sqrt{d}}$ for this problem. In particular, we are interested in finding a linear classifier $w_r\in\RR^d$ that minimizes the following robust error under the $\ell_\infty$ ball:
+\begin{equation*}
+    w_r = \argmin_w\ell_{r}(w) \defeq\argmin_w \EE\left[\max_{\|\Delta x\|_\infty \leq \frac{4}{\sqrt{d}}}\ell_{01}(f_{w}(x + \Delta x), y)\right],
+\end{equation*}
+where $\ell_{01}(\hat{y}, y)$ is the 0-1 loss function which equals 0 iff $\hat{y} = y$ otherwise 1. We call $\ell_r(w)$ the \emph{robust error} of $w$.
+
+\subsubsection{[10pts]}
+\label{p:1.2.1}
+Prove that for any $w\in\RR^d$ such that $\exists i \geq 2$, $w_i \neq 0$, there exists $w'\in\RR^d$ so that $\ell_r(w') < \ell_r(w)$.
+
+\subsubsection{[5pts]}
+\label{p:1.2.2}
+Based on the result in~\ref{p:1.2.1}, find $w_r$ as well as $\ell_r(w_r)$.
+
+\subsection{[5pts]}
+Compute the standard error of $f_{w_r}(\cdot)$, i.e., $\EE[\ell_{01}(f_{w_r}(X), Y)]$. Note: compare the standard error of this robust classifier with the one from~\ref{p:1.1}. You will be able to see that provably there is a non-zero gap in terms of the standard accuracy between the robust classifier and the original classifier.
+
+
+\section{Certified Robustness via Mixed Integer Linear Programming [30pts]}
+A mixed integer linear program (MILP) over an optimization variable $x\in\RR^d$ is an optimization problem of the following form:
+\begin{align*}
+    \min_x &\quad c^\top x \\
+    \text{subject to} &\quad Ax = b, \\
+    &\quad x \geq 0, \\
+    &\quad x_i\in \mathbb{Z}, \forall i \in \mathcal{I},
+\end{align*}
+where $\mathcal{I}\subseteq [d]$ is a subset of $\{1, \ldots, d\}$ that indicates the subset of optimization variables that are constrained to take integer values. In particular, if $|\mathcal{I}| = 0$, then the above MILP reduces to a linear program (LP); on the other hand, if $|\mathcal{I}| = d$, then it becomes a pure integer program (IP). Including integer variables increases enormously the modeling power, at the expense of computational complexity. In fact, as we briefly discussed in class, LPs can be solved in \emph{polynomial time} with interior-point methods (ellipsoid method, Karmarkar's algorithm, etc.). However, IP is an NP-hard problem, so there is no known polynomial-time algorithm.
+
+In this question we will explore how to formulate the certified robustness problem of a two-layer ReLU network so that it is equivalent to solve a mixed integer linear program (under certain boundedness constraint on the input variable). More specifically, the network we are going to work with has the following form:
+\begin{equation*}
+    \hat{y} = \sigma\left(W_2\cdot\text{ReLU}(W_1x)\right),
+\end{equation*}
+where $\sigma(\cdot)$ is the softmax function, i.e., $\sigma(t) = \left(\frac{\exp(t_1)}{\sum_i \exp(t_i)}, \ldots, \frac{\exp(t_k)}{\sum_i \exp(t_i)}\right)^\top\in \RR^k$. For this network we assume the input $x\in\RR^d$, $W_1\in\RR^{p\times d}$ and $W_2\in\RR^{k\times p}$. 
+
+\subsection{[10pts]}
+\label{p:2.1}
+As a starter, we will prove that under certain (restrictive) conditions, we can efficiently solve the following optimization problem involving a two-layer ReLU network.
+\begin{align*}
+    \min_{t,x} &\quad c^\top t \\
+    \text{subject to} &\quad t = \mathrm{ReLU}(Ax). \\
+\end{align*}
+In the optimization problem above, $x\in \RR^d$ is the input variable, $t\in \RR^p$ is the feature vector of the hidden layer, and $c\in\RR^p$ is the linear weight vector of the output layer. Prove that if $c\geq 0$, the above optimization problem could be solved via LP.
+
+\subsection{[20pts]}
+Given a two-layer ReLU network, recall that in order to certify robustness, it suffices if we can solve the following targeted attack problem:
+\begin{align}
+    \min_{z_1, z_2} &\quad (e_y - e_t)^\top (W_2 z_2) \nonumber\\
+    \text{subject to} &\quad z_2 = \mathrm{ReLU}(W_1z_1), \nonumber\\
+                      &\quad \|z_1 - x\|_\infty \leq \epsilon,
+\label{equ:opt}
+\end{align}
+where both $e_y, e_t$ are one-hot vectors corresponding to the ground-truth and the targeted classes. 
+
+\subsubsection{[5pts]}
+In general, given network weights $W_2$ and $e_y, e_t$, could we use the same strategy as the one in~\ref{p:2.1} to equivalently transform the above optimization problem into an LP? Explain why.
+
+\subsubsection{[10pts]}
+\label{p:2.2.1}
+Now consider the constraint $t = \mathrm{ReLU}(x)$, under the assumption that $l \leq x \leq u$ for some constants $l \leq u$ (i.e., $x$ is bounded), by introducing a binary switching variable $a\in\{0, 1\}$, show that the following two constraints are equivalent:
+\begin{align*}
+    t = \mathrm{ReLU}(x) \Longleftrightarrow 
+\begin{cases}
+    t -x &\geq 0,\\
+    t & \geq 0, \\
+    au - t &\geq 0, \\
+    x - (1-a)l - t &\geq 0, \\
+    a & \in \{0, 1\}.
+\end{cases} 
+\end{align*}
+
+\subsubsection{[5pts]}
+Use the construction introduced in~\ref{p:2.2.1} to transform the optimization problem~\eqref{equ:opt} into an MILP. How many auxiliary binary variables have been introduced in this process?
+
+\section{Basic Properties of Differential Privacy [10pts]}
+\subsection{[5pts]}
+Let $M:\mathcal{X}^n\to\mathcal{Y}$ be a randomized mechanism that takes a dataset $X\in\mathcal{X}^n$ as input and outputs an element $t\in\mathcal{Y}$. Assume $X\sim X'$ are two neighboring datasets, i.e., $X$ and $X'$ only differ in one row. Show that if $M$ is $\epsilon$-differentially private for some $\epsilon > 0$, then for any pair of neighboring datasets $X\sim X'$, the total variation distance between $M(X)$ and $M(X')$ is bounded by $\epsilon$, i.e., $\dtv(M(X), M(X'))\leq\epsilon$.
+
+\subsection{[5pts]}
+In this problem we look at datasets that differ in multiple entries, and study the privacy guarantee of applying a differentially private mechanism over these datasets. Formally, Let $M:\mathcal{X}^n\to\mathcal{Y}$ be a randomized mechanism that takes a dataset $X\in\mathcal{X}^n$ as input and outputs an element $t\in\mathcal{Y}$. Suppose $X$ and $X'$ are two datasets of size $n$ that differ in exactly $k$ positions. Show that for any $T\subseteq\mathcal{Y}$, we have
+\begin{equation*}
+    \Pr(M(X)\in T) \leq\exp(k\epsilon)\cdot \Pr(M(X')\in T).
+\end{equation*}
+Note: the above inequality implies that the privacy guarantee of a differentially private mechanism decays gracefully as the distance between two datasets increase.
+
+\section{Laplace Mechanism in Counting [20pts]}
+Suppose there are $n$ binary entries in a database, and we are interested in designing an $\epsilon$-differentially private mechanism in counting the active entries in the database, for some fixed constant $\epsilon > 0$. More formally, let $X \defeq (X_1,\ldots, X_n)\in\{0,1\}^n$ be the entries in the database. Following the Laplace mechanism, we design the following mechanism:
+\begin{equation*}
+    M(X) = \frac{1}{n}\sum_{i=1}^n X_i + Z,
+\end{equation*}
+where $Z\sim \text{Lap}(1/n\epsilon)$ is a random variable drawn from the Laplace distribution with location and scale parameters as 0 and $1/n\epsilon$, respectively.
+\subsection{[10pts]}
+\label{p:4.1}
+Using Chebyshev's inequality, show that with probability $\geq 0.95$, the following inequality holds:
+\begin{equation*}
+    \frac{1}{n}\sum_{i=1}^n X_i - \frac{10}{n\epsilon} \leq M(X) \leq \frac{1}{n}\sum_{i=1}^n X_i + \frac{10}{n\epsilon}.
+\end{equation*}
+Recall that the error bound on the same problem we obtained using the idea of randomized response, is (roughly) on the order of $O(1/\sqrt{n}\epsilon)$. One can see that the error bound using the Laplace mechanism is quadratically better than the one from randomized response.
+
+
+\subsection{[5pts]}
+\label{p:4.2}
+Derive the following equality to bound the tail probability of a Laplace random variable:
+\begin{equation*}
+    \Pr\left(|Z| \geq \frac{t}{n\epsilon}\right) = \exp(-t),
+\end{equation*}
+for any $t > 0$.
+
+\subsection{[5pts]}
+\label{p:4.3}
+In fact the probabilistic guarantee we obtained in~\ref{p:4.1} is pessimistic: since we know exactly how the noise is injected and the distribution of the noise, we could probably say more. Using the conclusion from~\ref{p:4.2}, show that with probability $\geq 0.95$, the following bound holds:
+\begin{equation*}
+    \frac{1}{n}\sum_{i=1}^n X_i - \frac{3}{n\epsilon} \leq M(X) \leq \frac{1}{n}\sum_{i=1}^n X_i + \frac{3}{n\epsilon}.
+\end{equation*}
+Note: the order of the error we obtained is still $O(1/n\epsilon)$, same as the one we obtained using Chebyshev's inequality in~\ref{p:4.1}. However, the constant dependency is better. 
+
+\end{document}
